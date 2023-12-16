@@ -1,0 +1,7 @@
+{
+    "name": "FLI-FLL-Timer",
+    "version": "0.0.1",
+    "description": "First Long Island FLL Timer",
+    "type": "module",
+    "dependencies": {}
+  }
