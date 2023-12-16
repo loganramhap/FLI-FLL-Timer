@@ -17,6 +17,21 @@
 				<div class="button_title mb-0" id="start_pause">Start</div>
 				<!-- <div class="button_hint">(Spacebar)</div> -->
 			</button>
+			<script src="node_modules/socket.io/"></script>
+			<script>
+			const socket = io();
+
+			const form = document.getElementById('timer_wrapper');
+			const input = document.getElementById('start_pause');
+
+			form.addEventListener('submit', (e) => {
+				e.preventDefault();
+				if (input.value) {
+				socket.emit('start-stop', "start-stop");
+				input.value = '';
+				}
+			});
+			</script>
 			<button class="btn btn-danger timer_button mt-0" onclick="reset()">
 				<div class="button_title">Reset</div>
 				<!-- <div class="button_hint">(R)</div> -->
@@ -152,7 +167,7 @@
 			</div>
 		</div>
 
-		<script src="/timer.js"></script>
+		<script src="/index.js"></script>
 
 		<br>
 
@@ -162,9 +177,6 @@
 			<a href="/about.html">About</a> |
 			<a href="https://github.com/johnholbrook/fll-timer.com">GitHub</a>
 		</small>
-		<script src="/socket.io/socket.io.js"></script>
-		<script>
-		const socket = io();
-		</script>
+		
 	</body>
 </html>
